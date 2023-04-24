@@ -1,21 +1,64 @@
-## Project Name: LIFELINE
+## FFSD PROJECT: Hospital Management System
+
+## Project Name: LIFELINE- Find your doctor online.
+
+## Installation and Setup: 
+
+   Clone the repository to your local machine.
+
+   First open terminal in directory where package.json is located.
+
+   ### Then install all the dependencies: run
+        npm init
+        npm i express
+        npm i ejs 
+        npm i body-parser 
+        npm i --save-dev nodemon npm 
+        npm i mongoose 
+        npm i alert 
+
+   Add ``` "start": "nodemon app.js" ```, in package.json "scripts" part 
+   
+   Start the server using ```npm start```     
+   
+   Open a browser and go to the link ```http://localhost:9000/ ```
 
 
-## Instructions to Run the Code: 
+### Functionalities:
+    
+This Web Portal is designed to help people to find their Ideal Hospital or Ideal Doctor Online. 
 
-### First run the command ```npm init -y```
-### Now, run ```npm install``` , this will install all required packages
-### To start the server run ```node home.js```
-### Open a browser and go to the link ```http://localhost:9000/ ```
+  # Patient:
+    - Create an account through patient registration page.
+    - Login through login page.
+    - Users can schedule appointments with doctors 
+    - Users can view the patient history.
+    - Users can view the blogs posted by the doctors.
+    - Users can edit Profile.
+
+  # Doctor:
+    - Register through doctor registration page and get approved by the admin
+    - Users can view the schedule based on the Appointments
+    - Users can edit Profile.
+
+  # Hospital:
+    - Register through hospital registration page and get approved by the admin
+    - Hospitals can view their profile
+    - Hospitals can view the schedule based on the Appointments
+  
+  # Admin:
+    - Admin can login through login page.
+    - Admin can view all the Patients, Doctors, Hospitals.
+    - Admin able to approve doctors,hospitals.
+    - Admin able to remove a user.
+    - Admin able to check feedback.
+
+### Technologies Used :
+
+     Backend: Node.js, Express.js, MongoDB
+     Frontend: HTML/CSS,javascript
+     Additional tools: Git, GitHub
 
 
-## Functionalities of the Web Page:
 
-### This Web Portal is designed to help people to find their Ideal Hospital or Ideal Doctor Online. 
-### This portal helps the patients to  book appointments with the doctors.
-### It also provides facilities like Blood bank, Organ Donation which allows users to have a good health facility through this Website.
-### Furthermore,it is also featured with blogs along with diagnosis centers.
-
-## More Details about the Project
-
-## This project is done as part of our FFSD-1 course
+### GitHub link:
