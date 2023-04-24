@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.left-container {
+    position: absolute;
+    right: 50vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    z-index: 0;
+}
+
+.right-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 50vw;
+    background-color: #880808;
+    z-index: 0;
+}
+
+.register-container {
+    position: absolute;
+    top: 10vh;
+    bottom: 10vh;
+    left: 15vw;
+    right: 15vw;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.first-half {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 35vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.heading-reg {
+    height: 20%;
+}
+
+.heading-reg p {
+    font-size: 1.75rem;
+    font-weight: 300;
+    padding-top: 6vh;
+    position: relative;
+    left: 2.5vw;
+}
+
+.quote-reg {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.quote {
+    text-align: center;
+    color: black;
+}
+
+.quote span {
+    color: #880808;
+}
+
+.hospitals-reg {
+    height: 20%;
+    position: relative;
+    padding-top: 5%;
+    left: 2.5vw;
+}
+
+.hospitals-reg a{
+    color: #880808;
+    text-decoration: none;
+}
+
+.second-half {
+    background-color: #880808;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 35vw;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.heading-reg-form {
+    font-size: 1.75rem;
+    font-weight: 300;
+    padding-top: 6vh;
+    color: white;
+    position: relative;
+    left: 2.5vw;
+    height: 20%;
+}
+
+.register-body {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 25%;
+    height: 75%;
+    margin-bottom: 5%;
+}
+.register-body-2 {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 25%;
+    height: 60%;
+    margin-bottom: 5%;
+}
+
+.name-label {
+    color: white;
+    position: absolute;
+    font-size: 0.8em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    top: 17.5%;
+}
+
+.name-register {
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+    width: 35%;
+}
+
+.number-label {
+    color: white;
+    position: absolute;
+    font-size: 0.8em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    top: 28.5%;
+}
+
+.firstname {
+    margin-right: 2%;
+}
+
+.mobile-number-input {
+    width: 73%;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.mail-label {
+    color: white;
+    position: absolute;
+    font-size: 0.8em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    top: 39%;
+}
+
+.mail-input {
+    width: 73%;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.dob-label {
+    color: white;
+    position: absolute;
+    font-size: 0.8em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    top: 49.5%;
+}
+
+.dob-input {
+    width: 73%;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.occupation-label {
+    color: white;
+    position: absolute;
+    font-size: 0.8em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    top: 60.5%;
+}
+
+.basic-register {
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+    width: 35%;
+}
+
+.occupation-register {
+    margin-right: 2%;
+}
+
+.marital-gender-label {
+    color: white;
+    position: absolute;
+    font-size: 0.8em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    top: 71%;
+}
+
+.mari-gen-input {
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+    width: 35%;
+}
+
+.maritalStatus {
+    margin-right: 2%;
+}
+
+.submit-register-button {
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px white solid;
+    color: #000;
+    transition: 0.5s ease-out;
+    width: auto;
+}
+.anchor-btn {
+    color: #000;
+    text-decoration: none;
+}
+.submit-register {
+    position: relative;
+    width: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-register-2{
+    position: relative;
+    width: 60%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 20%;
+}
+.submit-register button:hover {
+     color: white; 
+    box-shadow: inset 0 -100px 0 0 #880808;
+}
+.submit-register-2 button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #880808;
+}
+.inputs-register2{
+    display: flex;
+    flex-direction: column;
+    height: 52%;
+    justify-content: space-around;
+}
+.inputs-register2 input {
+    width: 60%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+}
+.cred-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+}

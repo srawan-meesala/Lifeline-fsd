@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>profile</title>
+    <link rel="stylesheet" href="/stylesheets/style-profile.css">
+</head>
+<body>
+    <div class="containerr">
+        <div class="fixed-head" id="headerHome">
+            <div class="header-1">
+                <nav> 
+                    <a href="home-page" id="logoBrand" class="logo-brand">Lifeline<span>.</span></a>
+                    <ul>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home-page">Home</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="blogs">Blogs</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+        <div class="body-conatiner">
+            <div class="content-profile">
+                <div class="p1-profile">
+                    <div class="head-p1">
+                        <div class="head-p1-p1">
+                            Your Details
+                        </div>
+                    </div>
+                    <div class="details-p1">
+                        FirstName: <span><%= details.firstName%></span><br>
+                        LastName: <span><%= details.lastName%></span><br>
+                        Gender: <span><%= details.gender%></span><br>
+                        Mobile: <span><%= details.mobileNumber%></span><br>
+                        Mail-ID: <span><%= details.mailID%></span><br>
+                        Date Of Birth: <span><%= details.dob%></span><br>
+                        Blood group: <span><%= details.bloodGroup%></span><br>
+                        Marital status: <span><%= details.maritalStatus%></span><br>
+                        Occupation: <span><%= details.occupation%></span>
+                    </div>
+                    <div class="edit-p1">
+                        <form action="/editUser" method="post">
+                            <input type="text" name="usernameUser" value="<%= details.username %>" style="display: none;">
+                            <button type="submit">Edit Profile</button>
+                        </form>
+                        <button><a href="iframe-profile">Appointment History</a></button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+.containerr{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(88, 08, 08, 1);
+    align-items: center;
+}
+
+.body{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head-logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+.head-logo a:nth-child(1){
+    color: #fff;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 10px;
+}
+.head-logo a:nth-child(2){
+    color: #fff;
+    text-decoration: none;
+    font-size: 3.4rem;
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* Form Styles */
+
+.form-appoint{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    height: 80%;
+    border-radius: 1rem;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.6);
+    padding: 2rem;
+    background-color: #ddd;
+}
+.heading-form{
+    font-size: 2rem;
+    height: 10%;
+    font-weight: 500;
+}
+.body-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40%;
+    width: 80%;
+}
+.inp{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    height: 3rem;
+}
+.inp label{
+    width: 50%;
+    font-size: 1.1rem;
+}
+.inp input, .inp select{
+    width: 50%;
+    height: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+.details{
+    font-size: 1.1rem;
+    font-weight: 500;
+    height: 10%;
+    text-align: center;
+}
+.details span{
+    color: #880808;
+}
+.pricing{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pp{
+    display: flex;
+    margin-left: 5rem;
+}
+.pp span{
+    width: 50%;
+}
+.submit-btn{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.submit-btn button {
+    margin: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.submit-btn button:hover{
+    border: 2px black solid;
+    padding: 3px;
+}
+.submit-btn button a{
+    text-decoration: none;
+    color: black;
+}
+
+.submit-btn input{
+    margin: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}

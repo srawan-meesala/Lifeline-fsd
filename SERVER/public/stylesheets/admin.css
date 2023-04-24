@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200&display=swap'); 
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'poppins',sans-serif;
+}
+body{
+    background-color: #222;
+}
+.containerr{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    font-size: 4rem;
+    color: #fff;
+    height: 15%;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+.ops{
+    position: relative;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    top:15vh;
+}
+.manage-hosp {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 25vw;
+    height:5rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+.manage-hosp:hover{
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.6);
+}
+.manage-doc {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 25vw;
+    height:5rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+.manage-doc:hover{
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.6);
+}
+.one{
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-between;
+}
+.two{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-between;
+}
+.manage-user {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 25vw;
+    height:5rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+.manage-user:hover{
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.6);
+}
+.view {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 25vw;
+    height:5rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+.view a,.manage-hosp a,.manage-doc a,.manage-user a{
+    color: #000;
+}
+.view:hover{
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.6);
+}
+.logout {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+    top: 6rem;
+}
+/* .ops a{
+    font-size: 1.5rem;
+    color: #ccc;
+    padding: 5px;
+    transition: 0.1s;
+}
+.ops a:hover{
+    color: #fff;
+    font-size: 1.7rem;
+} */

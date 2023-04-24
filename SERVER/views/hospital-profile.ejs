@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hospital profile</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/hospital-profile.css">
+</head>
+<body>
+    <div class="containerr">
+        <div class="fixed-head" id="headerHome">
+            <div class="header-1">
+                <nav> 
+                    <a href="#" id="logoBrand" class="logo-brand">Lifeline<span>.</span></a>
+                    <ul>
+                        <li><a id="navListElements" class="li-ele nav-element" href="services">Services</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+        <div class="body-conatiner">
+            <div class="content-profile">
+                <div class="p1-profile">
+                    <div class="head-p1">
+                        <div class="head-p1-p1">
+                            Hospital Details
+                        </div>
+                    </div>
+                    <div class="details-p1">
+                        <p>Name: <span><%= details.hospName %></span><br></p>
+                        <p>Mail-Id: <span><%= details.emailID %></span><br></p>
+                        <p>Contact: <span><%= details.mobNum %></span><br></p>
+                        <p>City: <span><%= details.city %></span><br></p>
+                        <p>Diagnosis Center: <span><%= details.ifDiag %></span><br></p>
+                        <p>Blood Bank: <span><%= details.bloodBank %></span><br></p>
+                        <p>Organ Donation Camp: <span><%= details.odCamp %></span><br></p>
+                    </div>
+                    <div class="edit-p1">
+                        <form action="/editHosp" method="post">
+                            <input type="text" name="usernameHosp" value="<%= details.userID %>" style="display: none;">
+                            <button type="submit">Edit Profile</button>
+                        </form>
+                        <button><a href="iframe-profile.html">Appointment History</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

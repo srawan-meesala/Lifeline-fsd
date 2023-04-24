@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>profile -doc</title>
+    <link rel="stylesheet" href="/stylesheets/profile-doc-edited.css">
+</head>
+<body>
+    <div class="containerr">
+        <div class="fixed-head" id="headerHome">
+            <div class="header-1">
+                <nav> 
+                    <a href="#" id="logoBrand" class="logo-brand">Lifeline<span>.</span></a>
+                    <ul>
+                        <li><a id="navListElements" class="li-ele nav-element" href="#">Home</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="#footer-home">Contact Us</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="#">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+        <div class="body-conatiner">
+            <div class="content-profile">
+                <form class="p1-profile" method="post" action="/editDocProfile">
+                    <div class="head-p1">
+                        <div class="head-p1-p1">
+                            Your Details
+                        </div>
+                    </div>
+                    <div class="details-p1">
+                       <div class="editable">Name: <span><input name="docName" type="text"></span><br></div>
+                       <div class="editable">Mobile: <span><input name="mobNum" type="text"></span><br></div>
+                       <div class="editable">Appointment Fee: <span><input name="price" type="num"></span><br></div>
+                       <div class="editable">Specialization: <span><input name="spec" type="text"></span><br></div>
+                       <input type="text" name="docID" style="display: none;" value="<%= docID %>">
+                    </div>
+                    <div class="edit-p1">
+                        <button type="submit">Save Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

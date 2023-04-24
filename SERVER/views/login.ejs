@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Lifeline.</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/style-login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-container"></div>
+        <div class="right-container"></div>
+        <div class="login-container">
+            <div class="first-half">
+                <div class="welcome"><p>Welcome back</p></div>
+                <div class="logo-login">
+                    <p class="text">All you need for a<br><span>healthy life.</span></p>
+                </div>
+                <div class="register-login">
+                    <p>Haven't Registered yet? <a href="register">Register here</a></p>
+                </div>
+            </div>
+            <div class="second-half">
+                <div class="login-heading">
+                    <p>Login to your Lifeline account</p>
+                </div>
+                <form  id="login-form" action="/submit-login" method="post">
+                    <div class="login-body">
+                        <div class="inputs-login">
+                            <label for="username" class="label-username">Username</label>
+                            <input type="text" name="username" class="username-login" placeholder="Username" required>
+                            <label for="password" class="label-password">Password</label>
+                            <div class="password-box">
+                                <input type="password" id="passwordInput" name="password" class="password-login" placeholder="Password" required>
+                                <img src="/pictures/icons8-eye-24.png" alt="show" id="showPass">
+                            </div>
+                            <label for="typeOfUser" class="label-select">User type</label>
+                            <select name="typeOfUser" id="typeOfUser">
+                                <option value="patient" selected>Patient</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="admin">Administrator</option>
+                            </select>
+                        </div>
+                        <div class="other-login">
+                            <a href="#" >Forgot Password</a>
+                        </div>
+                        <div class="submit-login">
+                            <button type="submit" > Login</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="login-footer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/javascript/appLogin.js"></script>
+    <script src="/javascript/loginpath.js"></script>
+</body>
+</html>

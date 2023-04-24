@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hospital profile edited</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/hospital-profile-edited.css">
+</head>
+<body>
+    <div class="containerr">
+        <div class="fixed-head" id="headerHome">
+            <div class="header-1">
+                <nav> 
+                    <a href="#" id="logoBrand" class="logo-brand">Lifeline<span>.</span></a>
+                    <ul>
+                        <li><a id="navListElements" class="li-ele nav-element" href="#footer-home">Contact Us</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="services">Services</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+        <div class="body-conatiner">
+            <div class="content-profile">
+                <form class="p1-profile" method="post" action="/save-hosp">
+                    <div class="head-p1">
+                        <div class="head-p1-p1">
+                            Hospital Details
+                        </div>
+                    </div>
+                    <div class="details-p1">
+                        <div class="editable">Name: <span><input name="hospName" type="text" required></span><br></div>
+                        <!-- <div class="editable edit">Mail-Id: <span><input type="email" required></input></span><br></div> -->
+                        <div class="editable">Contact: <span><input name="mobNum" type="tel" required></span><br></div>
+                        <div class="editable">City: <span><input name="city" type="text" required></span><br></div>
+                        <div class="editable edit">Diagnosis Center: <span>
+                            <select name="DiagnosisCenter">
+                                <option value="Available">Available</option>
+                                <option value="Not-available">Not-available</option>
+                            </select>
+                        </span><br></div>
+                        <div class="editable edit">Blood Bank: <span>
+                            <select name="BBHosp">
+                                <option value="Available">Available</option>
+                                <option value="Not-available">Not-available</option>
+                            </select>
+                        </span><br></div>
+                        <div class="editable edit">Organ Donation Camp: <span>
+                            <select name="ODCamp">
+                                <option value="Available">Available</option>
+                                <option value="Not-available">Not-available</option>
+                            </select>
+                        </span><br></div>
+                    </div>
+                    <input type="text" style="display: none;" value="<%= usernameUser %>" name="usernameUser">
+                    <div class="edit-p1">
+                        <button><a href="hospital-profile">Save Profile</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

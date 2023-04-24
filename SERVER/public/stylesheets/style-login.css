@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.left-container {
+    position: absolute;
+    right: 50vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+
+.right-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 50vw;
+    background-color: #880808;
+}
+
+.login-container {
+    position: absolute;
+    top: 10vh;
+    bottom: 10vh;
+    left: 15vw;
+    right: 15vw;
+    background-color: #880808;
+    z-index: 10;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+.first-half {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    left: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.second-half {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    background-color: #880808;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.welcome {
+    height: 20%;
+}
+
+.welcome p {
+    font-size: 1.75rem;
+    font-weight: 300;
+    padding-top: 6vh;
+    position: relative;
+    left: 2.5vw;
+}
+
+.logo-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.text {
+    text-align: center;
+    color: black;
+}
+
+.text span {
+    color: #880808;
+}
+
+.register-login {
+    height: 20%;
+}
+
+.register-login p {
+    padding-top: 12%;
+    font-size: 1em;
+    position: relative;
+    left: 2.5vw;
+}
+
+.register-login a{
+    color: #880808;
+    text-decoration: none;
+    position: relative;
+}
+
+.login-heading {
+    font-size: 1.75rem;
+    font-weight: 300;
+    padding-top: 6vh;
+    color: white;
+    position: relative;
+    left: 2.5vw;
+    height: 20%;
+}
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.inputs-login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.username-login{
+    margin-bottom: 1.5vh;
+}
+
+.label-username {
+    color: white;
+    position: relative;
+    left: -9vw;
+    margin-bottom: 3px;
+    font-size: 1em;
+    /* font-family: 'Labrada', serif; */
+}
+
+.label-password{
+    color: white;
+    position: relative;
+    left: -9vw;
+    font-size: 1em;
+    margin-bottom: 3px;
+    margin-top: 1.5vh;
+    /* font-family: 'Labrada', serif; */
+}
+
+.username-login {
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: 60%;
+    background-color: white;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.password-login {
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: 60%;
+    position: absolute;
+    background-color: white;
+    z-index: 0;
+    font-size: small;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.password-box {
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 3vh;
+}
+
+.password-box img {
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    width: 20px;
+    right: 8px;
+}
+
+.label-select {
+    color: white;
+    position: relative;
+    margin-bottom: 3px;
+    left: -9vw;
+    font-size: 1em;
+    /* font-family: 'Labrada', serif; */
+}
+
+.login-body select {
+    padding: 10px;
+    color: #000;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.other-login {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 4vh;
+}
+
+.other-login a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+.other-login a:hover {
+    color: white;
+}
+
+.submit-login {
+    position: relative;
+    top: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-login button {
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px white solid;
+    color: #000;
+    transition: 0.5s ease-out;
+}
+
+.submit-login button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #880808;
+}
+
+.login-footer {
+    height: 20%;
+}
+
+.anchor-btn {
+    color: black;
+    text-decoration: none;
+}

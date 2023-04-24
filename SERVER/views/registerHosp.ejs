@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lifeline.</title>
+    <link rel="icon" type="image/x-icon" href="pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/style-register-hosp.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-container"></div>
+        <div class="right-container"></div>
+        <div class="register-container">
+            <div class="first-half">
+                <div class="heading-reg"><p>Register Here</p></div>
+                <div class="quote-reg"><p class="quote">Benefiting you is <br><span>our priority.</span></p></div>
+                <div class="hospitals-reg">
+                    Already on Lifeline?&nbsp;
+                    <a href="login" class="hospitals-reg-anchor">
+                        Login here.
+                    </a>
+                    <br>
+                    Not here as a Hospital?&nbsp;
+                    <a href="register" class="hospitals-reg-anchor">
+                        Register here as Patient.
+                    </a>
+                </div>
+            </div>
+            <div class="second-half">
+                <div class="heading-reg-form"><p>Details.</p></div>
+                <form action="/apply" method="post" class="register-body">
+                    <div class="mobile-number">
+                        <label for="hospName" class="number-label">Name of the Hospital</label>
+                        <input required type="text" placeholder="Hospital Name" name="hospName" class="mobile-number-input">
+                    </div>
+                    <div class="name">
+                        <label for="mobNum" class="name-label">Contact Number</label>
+                        <input required type="tel" placeholder="0000000000" name="mobNum" class="firstname name-register">
+                        <label for="emailID" class="name-label">Email ID</label>
+                        <input required type="email" placeholder="hospital@hosp.com" name="emailID" class="lastname name-register">
+                    </div>
+                    <div class="marital-gender">
+                        <label for="ifDiag" class="marital-gender-label">Diagnosis center</label>
+                        <select name="ifDiag" id="status-select" class="maritalStatus mari-gen-input">
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+                        </select>
+                        <label for="city" class="marital-gender-label">City</label>
+                        <input required type="text" name="city" id="city" placeholder="City" class="lastname name-register">
+                    </div>
+                    <div class="basic">
+                        <label for="odCamp" class="occupation-label">Organ Donor camps</label>
+                        <select name="odCamp" class="occupation-register basic-register">
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+                        </select>
+                        <label for="bloodBank" class="occupation-label">Blood Bank</label>
+                        <select name="bloodBank" class="blood-group-register basic-register" id="bloodGroup">
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+                        </select>
+                    </div>
+                    <div class="mail">
+                        <label for="userID" class="mail-label">Choose a User ID</label>
+                        <input required type="text" placeholder="Username" name="userID" class="mail-input">
+                    </div>
+                    <div class="date-of-birth">
+                        <label for="pass" class="dob-label">Choose a Password</label>
+                        <input required type="password" placeholder="Password" name="pass" class="dob-input">
+                    </div>
+                    <div class="submit-register">
+                        <input type="submit" class="submit-register-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="appRegister.js"></script>
+</body>
+</html>

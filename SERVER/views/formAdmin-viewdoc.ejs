@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Lifeline</title>
+    <link rel="stylesheet" href="/stylesheets/style-admin-form.css">
+    <link rel="icon" type="image/x-icon" href="pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/style-viewUser.css">
+</head>
+<body>
+    <div class="containerr">
+        <div class="header">
+            <p>Lifeline<span>.</span> Admin<span>.</span></p>
+        </div>
+        <div class="forms-doc">
+                <div class="remove-smng">
+                    <div class="head-add" style="text-align: center;">Doctor Details</div>
+                    <div class="content-add">
+                        <div class="inp-add">
+                           <table>
+                                <thead>
+                                    <tr>
+                                        <th>Doctor Name</th>
+                                        <th>Mobile Number</th>
+                                        <th>Mail ID</th>
+                                        <th>Hospital Name</th> 
+                                        <th>City</th>
+                                        <th>Specialization</th>
+                                        <th>Approval</th>
+                                        <th>Doctor ID</th> 
+                                    </tr>
+                                  </thead>
+                                 
+                                    <%details.forEach((user)=>{ %>
+                                    <tbody>
+                                        <tr>
+                                          <td><%= user.doctName %></td>
+                                          <td><%= user.mobNum %></td>
+                                          <td><%= user.emailID %></td>
+                                          <td><%= user.hospName %></td>
+                                          <td><%= user.city %></td>
+                                          <td><%= user.spec %></td>
+                                          <td><%= user.approved %></td>
+                                          <td><%= user.docID %></td>
+                                        </tr>
+                                      </tbody>
+                                 <%})%>
+                            </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

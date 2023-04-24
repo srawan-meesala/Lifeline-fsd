@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lifeline.</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/style-doc.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-container"></div>
+        <div class="right-container"></div>
+        <div class="register-container">
+            <div class="first-half">
+                <div class="heading-reg"><p>Register Here</p></div>
+                <div class="quote-reg"><p class="quote">A good doctor<br> lets <span>nature heal.</span></p></div>
+                <div class="hospitals-reg">
+                    Already on Lifeline?&nbsp;
+                    <a href="login" class="hospitals-reg-anchor">
+                        Login here.
+                    </a>
+                    <br>
+                    Not here as a Doctor?&nbsp;
+                    <a href="register" class="hospitals-reg-anchor">
+                        Register here as Patient.
+                    </a>
+                </div>
+            </div>
+            <div class="second-half">
+                <div class="heading-reg-form"><p>Details.</p></div>
+                <form action="/applydoc" method="post" class="register-body" id="register-doc">
+                    <div class="mobile-number">
+                        <label for="doctName" class="number-label">Name</label>
+                        <input required type="text" placeholder="Doctor Name" id="doctName"  name="doctName" class="mobile-number-input" required>
+                    </div>
+                    <div class="name">
+                        <label for="mobNum" class="name-label">Contact Number</label>
+                        <input required type="tel" placeholder="0000000000" id="mobNum" name="mobNum" class="firstname name-register" >
+                        <label for="emailID" class="name-label">Email ID</label>
+                        <input required type="email" placeholder="doctor@doct.com" id="emailID" name="emailID" class="lastname name-register" >
+                    </div>
+                    <div class="marital-gender">
+                        <label for="hospName" class="marital-gender-label">Choose your Hospital</label>
+                        <select name="hospName" id="status-select" class="maritalStatus mari-gen-input">
+                            <% details.forEach((user)=>{ %>
+                                <option value="<%= user.hospName %>"><%= user.hospName %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="basic">
+                        <label for="spec" class="occupation-label">Specialization</label>
+                        <input name="spec" type="text" class="firstname name-register" id="spec" placeholder="Specialization">
+                        <label for="price" class="occupation-label">Appointment Fee</label>
+                        <input name="price" type="number" class="firstname name-register" id="price" placeholder="000">
+                    </div>
+                    <div class="mail">
+                        <label for="docID" class="mail-label">Your Doctor ID</label>
+                        <input required type="text" placeholder="Username" name="docID" id="username" class="mail-input" >
+                    </div>
+                    <div class="date-of-birth">
+                        <label for="pass" class="dob-label">Choose a Password</label>
+                        <input required type="password" placeholder="Password" name="pass" id="password" class="dob-input" >
+                    </div>
+                    <div class="submit-register">
+                        <button type="submit" class="submit-register-button">Apply</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- <script src="/public/javascript/appDoctRegister.js"></script> -->
+
+    <script src="/javascript/appDocRegister.js"></script>
+</body>
+</html>

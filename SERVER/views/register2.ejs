@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lifeline.</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/style-register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-container"></div>
+        <div class="right-container"></div>
+        <div class="register-container">
+            <div class="first-half">
+                <div class="heading-reg"><p>Register Here</p></div>
+                <div class="quote-reg"><p class="quote">Healthcare is a <br><span>human right.</span></p></div>
+                <div class="hospitals-reg">
+                    Already a member?&nbsp;
+                    <a href="login" class="hospitals-reg-anchor">
+                        Login here.
+                    </a>
+                    <br>
+                    Not here as a Patient?&nbsp;
+                    <a href="#" class="hospitals-reg-anchor">
+                        Contact us for verification.
+                    </a>
+                </div>
+            </div>
+            <div class="second-half">
+                <div class="heading-reg-form"><p>Choose your<br> Username and Password.</p></div>
+                <form action="/submit" method="post" class="register-body-2" id="register-form">
+                    <div class="inputs-register2">
+                        <div class="cred-register">
+                            <label for="username" class="label-username-reg">Username</label>
+                            <input type="text" id="usernameInput" name="username" class="username-login" placeholder="Username" required>
+                        </div>
+                        <div class="cred-register">
+                            <label for="password" class="label-password">Password</label>
+                            <input type="password" id="passwordInput" name="password" class="password-login" placeholder="Password" required>
+                        </div>
+                        <div class="cred-register">
+                            <label for="confirm-password" class="label-password">Confirm Password</label>
+                            <input type="password" id="confirm-passwordInput" name="confirm-password" class="password-login" placeholder="Confirm Password" required>
+                        </div>
+                        
+
+                    </div>
+                    <div class="submit-register-2">
+                        <input type="submit" class="submit-register-button" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/javascript/appRegister2.js"></script>
+</body>
+</html>

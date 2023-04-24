@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage Appointments - Lifeline</title>
+    <link rel="stylesheet" href="/stylesheets/showAppoint.css">
+</head>
+<body>
+    <div class="containerr-2">
+        <div class="fixed-head" id="headerHome">
+            <div class="header-1">
+                <nav> 
+                    <a href="home-page" id="logoBrand" class="logo-brand">Lifeline<span>.</span></a>
+                    <ul>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home-page">Home</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="blogs">Blogs</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="head-2">
+            Manage Appointments
+        </div>
+        <div class="june">
+            <% data.forEach((user)=>{%>
+                <div class="history">
+                    <div class="date">
+                        <b><%= user.Date %></b>
+                    </div>
+                    <div class="content">
+                        <p><%= user.patName %></p>
+                        <p><%= user.docName %></p>
+                        <p class="status"><%= user.Timeslot %></p>
+                    </div>
+                    <form class="approve-form" action="/approveAppoint" method="post">
+                        <input type="text" name="pat" style="display: none;" value="<%= user.patName %>" >
+                        <input type="text" name="id" style="display: none;" value="<%= user.username %>" >
+                        <input type="text" name="did" style="display: none;" value="<%= user.docID %>" >
+                        <input type="text" name="date" style="display: none;" value="<%= user.Date %>" >
+                        <input type="text" name="time" style="display: none;" value="<%= user.Timeslot %>" >
+                        <% if(user.approved == "false"){ %>
+                            <input class="btn-approve" type="submit" value="Approve">
+                        <% }else{ %>
+                            <input type="text" disabled class="btn-approve" style="cursor: default; border:none; width: 5.5rem;" value="Approved">
+                        <% } %>
+                    </form>
+                </div>
+            <%}) %>
+            <div class="empty"></div>
+        </div>
+    </div>
+    <script src="/javascript/aboutUsNav.js"></script>
+</body>
+</html>

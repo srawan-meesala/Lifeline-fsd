@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lifeline.</title>
+    <link rel="icon" type="image/x-icon" href="pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="style-register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-container"></div>
+        <div class="right-container"></div>
+        <div class="register-container">
+            <div class="first-half">
+                <div class="heading-reg"><p>Register Here</p></div>
+                <div class="quote-reg"><p class="quote">Healthcare is a <br><span>human right.</span></p></div>
+                <div class="hospitals-reg">
+                    Already a member?&nbsp;
+                    <a href="login.html" class="hospitals-reg-anchor">
+                        Login here.
+                    </a>
+                    <br>
+                    Not here as a Patient?&nbsp;
+                    <a href="#" class="hospitals-reg-anchor">
+                        Contact us for verification.
+                    </a>
+                </div>
+            </div>
+            <div class="second-half">
+                <div class="heading-reg-form"><p>Details.</p></div>
+                <form action="" class="register-body">
+                    <div class="name">
+                        <label for="firstName" class="name-label">First Name</label>
+                        <input type="text" placeholder="First Name" name="firstName" class="firstname name-register">
+                        <label for="lastName" class="name-label">Last Name</label>
+                        <input type="text" placeholder="Last Name" name="lastName" class="lastname name-register">
+                    </div>
+                    <div class="mobile-number">
+                        <label for="mobileNumber" class="number-label">Mobile Number</label>
+                        <input type="tel" placeholder="0000000000" name="mobileNumber" class="mobile-number-input">
+                    </div>
+                    <div class="mail">
+                        <label for="mailID" class="mail-label">E-mail ID</label>
+                        <input type="email" placeholder="someone@example.com" name="mailID" class="mail-input">
+                    </div>
+                    <div class="date-of-birth">
+                        <label for="dob" class="dob-label">Date of Birth</label>
+                        <input type="date" name="dob" class="dob-input">
+                    </div>
+                    <div class="basic">
+                        <label for="occupation" class="occupation-label">Occupation</label>
+                        <input type="text" placeholder="Occupation" name="occupation" class="occupation-register basic-register">
+                        <label for="bloodGroup" class="occupation-label">Blood Group</label>
+                        <select name="bloodGroup" class="blood-group-register basic-register" id="bloodGroup">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="A-">A-</option>
+                            <option value="A+">A+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="marital-gender">
+                        <label for="maritalStatus" class="marital-gender-label">Marital Status</label>
+                        <select name="maritalStatus" id="status-select" class="maritalStatus mari-gen-input">
+                            <option value="married">Married</option>
+                            <option value="unmarried">Unmarried</option>
+                        </select>
+                        <label for="gender" class="marital-gender-label">Gender</label>
+                        <select name="gender" id="gender-select" class="gender mari-gen-input">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="submit-register">
+                        <button type="submit" class="submit-register-button"><a class="anchor-btn" href="register2.html">Proceed</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="appRegister.js"></script>
+</body>
+</html>

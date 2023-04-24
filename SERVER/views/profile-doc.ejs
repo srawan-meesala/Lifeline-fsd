@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Profile - Lifeline</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png"/>
+    <link rel="stylesheet" href="stylesheets/profile-doc.css" />
+  </head>
+  <body>
+    <div class="containerr">
+      <div class="fixed-head" id="headerHome">
+        <div class="header-1">
+          <nav>
+            <a href="#" id="logoBrand" class="logo-brand">Lifeline<span>.</span></a>
+            <ul>
+              <li>
+                <a id="navListElements" class="li-ele nav-element" href="#footer-home">Contact Us</a>
+              </li>
+              <li>
+                <a id="navListElements" class="li-ele nav-element" href="home">Logout</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="body-conatiner">
+        <div class="content-profile">
+          <div class="p1-profile">
+            <div class="head-p1">
+              <div class="head-p1-p1">Your Details</div>
+            </div>
+            <div class="details-p1">
+              <p>Name: <span><%= details.doctName %></span><br /></p>
+              <p>Mobile: <span><%= details.mobNum %></span><br /></p>
+              <p>Mail-ID: <span><%= details.emailID %></span><br /></p>
+              <p>Hospital Name: <span><%= details.hospName %></span><br /></p>
+              <p>City: <span><%= details.city %></span><br/></p>
+              <p>Appointment Fee: <span><%= details.price %></span></p>
+            </div>
+            <div class="edit-p1">
+                <form action="/edit-profile-doc" method="post">
+                    <input type="text" style="display: none;" name="userID" value="<%= details.docID %>">
+                    <button type="submit">Edit Profile</button>
+                </form>
+                <form action="/manageAppoint" method="post">
+                    <input type="text" style="display: none;" value="<%= details.docID %>" name="docID">
+                    <button type="submit">Manage Appointments</button>
+                </form>
+                <!-- <button><a href="iframe-profile.html">Appointment History</a></button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

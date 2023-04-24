@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your Appointment - Lifeline</title>
+    <link rel="icon" type="image/x-icon" href="pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <link rel="stylesheet" href="/stylesheets/style-get-appoint.css">
+</head>
+<body>
+    <div class="containerr">
+        <div class="body">
+            <div class="head-logo">
+                <a href="#">Lifeline.</a>
+            </div>
+            <form action="/ty" method="post" class="form-appoint" id="appoint-form">
+                <div class="heading-form">
+                    Fill in your details and book your Appointment.
+                </div>
+                <div class="body-form">
+                    <div class="name inp">
+                        <label for="nameAppoint">Your Name</label>
+                        <input type="text" name="nameAppoint" id="nameAppoint" required>
+                    </div>
+                    <div class="date inp">
+                        <label for="dateAppoint">Date of Appointment</label>
+                        <input type="date" name="dateAppoint" id="dateAppoint" required>
+                    </div>
+                    <div class="time-slot inp">
+                        <label for="timeAppoint">Choose your time slot</label>
+                        <select name="timeAppoint" id="timeAppoint">
+                            <option value="9:00 to 10:00">9:00 to 10:00</option>
+                            <option value="10:00 to 11:00">10:00 to 11:00</option>
+                            <option value="11:00 to 12:00">11:00 to 12:00</option>
+                            <option value="12:00 to 01:00">12:00 to 01:00</option>
+                        </select>
+                    </div>
+                    <div class="contact inp">
+                        <label for="contactAppoint">Your contact number</label>
+                        <input type="text" name="contactAppoint" id="contactAppoint">
+                    </div>
+                </div>
+                <div class="details">
+                    You are booking an Appointment for <span><%= hjk[0]%></span> from <span><%= hjk[1]%></span> for the above selected slot.
+                </div>
+                <div class="pricing">
+                    <div class="head-fee">And the pricing will be as follows:</div>
+                    <div class="doc-fee pp"><span>Doctor Fees: </span><span>₹ <%= hjk[2] %>/-</span></div>
+                    <div class="online-fee pp"><span>Online Charges: </span><span>₹ <%= hjk[3] %>/-</span></div>
+                    <div class="total-fee pp"><span>Total Price: </span><span>₹ <%= hjk[4] %>/-</span></div>
+                </div>
+                <input type="text" style="display: none;" name="Did" value="<%= hjk[5] %>">
+                <input type="text" style="display: none;" name="dname" value="<%= hjk[0] %>">
+                <div class="submit-btn">                    
+                    <input type="submit" value="Pay and confirm your Appointment">
+                    <button><a href="searchhospitals">Go back and cancel this transaction</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/javascript/appAppointment.js"></script>
+</body>
+</html>

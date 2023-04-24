@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cards">
+        <%x.forEach((y)=>{%>
+        <div class="panel-1">
+            <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
+                <div class="body-panel">
+                     <div class="head-body">
+            <p class="name-dr"><%=y.doctorname%></p>
+            <p class="name-hosp">Ramprasad Clinic</p>
+        </div>
+        <div class="bio-body">
+            <p class="spec">Specialised in <span>Cardiology</span></p>
+            <p class="exp">Experience of <span>9</span> years</p>
+            <p class="city">Practicing in <span>Chennai</span></p>
+            <p class="ll-exp">In lifeline since <span>2023</span></p>
+        </div>
+        <div class="contact-body">
+            <button class="number-panel">
+                <p><span class="material-symbols-outlined">call</span>8045978755</p>
+            </button>
+            <button class="appoint-panel">
+                <a href="getAppointment">Book Appointment</a> 
+            </button>
+            <button class="details-panel">
+                <a href="card-open">About doctor</a>
+            </button>
+        </div>
+    </div>
+</div>
+<%})%>
+</div>
+</body>
+</html>
+
+
