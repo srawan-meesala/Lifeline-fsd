@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Your Profile - Lifeline</title>
-    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <title>profile</title>
     <link rel="stylesheet" href="/stylesheets/style-profile.css">
 </head>
 <body>
@@ -28,28 +27,25 @@
                         </div>
                     </div>
                     <div class="details-p1">
-                        FirstName: <span><%= details.firstName%></span><br>
-                        LastName: <span><%= details.lastName%></span><br>
-                        Gender: <span><%= details.gender%></span><br>
-                        Mobile: <span><%= details.mobileNumber%></span><br>
-                        Mail-ID: <span><%= details.mailID%></span><br>
-                        Date Of Birth: <span><%= details.dob%></span><br>
-                        Blood group: <span><%= details.bloodGroup%></span><br>
-                        Marital status: <span><%= details.maritalStatus%></span><br>
-                        Occupation: <span><%= details.occupation%></span>
+                        Name: <span>Ram prasad</span><br>
+                        Gender: <span>Male</span><br>
+                        Mobile: <span>8965115456</span><br>
+                        Mail-ID: <span>Ramprasaddoc@gamil.com</span><br>
+                        Date Of Birth: <span>18-12-2023</span><br>
+                        Blood group: <span>O+</span><br>
+                        Marital status: <span>Unmarried</span> 
                     </div>
                     <div class="edit-p1">
-                        <form action="/editUser" method="post">
-                            <input type="text" name="usernameUser" value="<%= details.username %>" style="display: none;">
-                            <button type="submit">Edit Profile</button>
-                        </form>
-                        <form action="/pathist" method="post">
-                            <input type="text" name="usernameUs" value="<%= details.username %>" style="display: none;">
-                            <button type="submit" >Appointment History</button>
-                        </form>
-                        
+                        <button><a href="profile-edited">Edit Profile</a></button>
                     </div>
                 </div>
+                <div class="p2-profile">
+                    <div class="head-p1">
+                        <div class="head-p1-p2">Your Lifeline Journey</div>
+                    </div>
+                    <div class="history-p2">
+                        <iframe src="iframe-profile" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
