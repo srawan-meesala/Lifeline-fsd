@@ -31,33 +31,79 @@
             <p>Blood Banks and Organ Donation Camps<span>.</span></p>
         </div>
         <div class="panels">
-            <% data.forEach((user)=>{ %>
-                <div class="panel-1">
-                    <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
-                    <div class="body-panel">
-                        <div class="head-body">
-                            <p class="name-dr"><%= user.hospName %></p>
-                        </div>
-                        <div class="bio-body">
-                            <p class="city">Operating in <span><%= user.city %></span></p>
-                            <% if ((user.bloodBank == "available") && (user.odCamp == "available")) { %>
-                                <p class="all-types">Highly Operational Blood Bank and Organ Donation Camp.</p>
-                            <% }else if(user.odCamp != "available") { %>
-                                <p class="all-types">Highly Operational Blood Bank.</p>
-                            <% } else if (user.bloodBank != "available") { %>
-                                <p class="all-types">Highly Operational Organ Donation Camp.</p>
-                            <% } %>
-                            <p class="all-types">Email ID - <%= user.emailID %></p>
-                        </div>
-                        <div class="contact-body">
-                            <button class="number-panel">
-                                <div><div><span class="material-symbols-outlined">call</span></div><%= user.mobNum %></div>
-                            </button>
-                        </div>
+            <div class="panel-1">
+                <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
+                <div class="body-panel">
+                    <div class="head-body">
+                        <p class="name-dr">Ramprasad Clinic</p>
+                    </div>
+                    <div class="bio-body">
+                        <p class="typeOf"><span>Blood Bank</span></p>
+                        <p class="city">Operating in <span>Chennai</span></p>
+                        <p class="ll-exp">Available timings: <span>9AM - 12PM</span></p>
+                    </div>
+                    <div class="contact-body">
+                        <button class="number-panel">
+                            <div><div><span class="material-symbols-outlined">call</span></div>8045978755</div>
+                        </button>
                     </div>
                 </div>
-                <% }) %>
-            
+            </div>
+            <div class="panel-1">
+                <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
+                <div class="body-panel">
+                    <div class="head-body">
+                        <p class="name-dr">Ramprasad Clinic</p>
+                    </div>
+                    <div class="bio-body">
+                        <p class="typeOf"><span>Blood Bank</span></p>
+                        <p class="city">Operating in <span>Chennai</span></p>
+                        <p class="ll-exp">Available timings: <span>9AM - 12PM</span></p>
+                    </div>
+                    <div class="contact-body">
+                        <button class="number-panel">
+                            <div><div><span class="material-symbols-outlined">call</span></div>8045978755</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-1">
+                <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
+                <div class="body-panel">
+                    <div class="head-body">
+                        <p class="name-dr">Ramprasad Clinic</p>
+                    </div>
+                    <div class="bio-body">
+                        <p class="typeOf"><span>Blood Bank</span></p>
+                        <p class="city">Operating in <span>Chennai</span></p>
+                        <p class="ll-exp">Available timings: <span>9AM - 12PM</span></p>
+                    </div>
+                    <div class="contact-body">
+                        <button class="number-panel">
+                            <div><div><span class="material-symbols-outlined">call</span></div>8045978755</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-1">
+                <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
+                <div class="body-panel">
+                    <div class="head-body">
+                        <p class="name-dr">Ramprasad Clinic</p>
+                    </div>
+                    <div class="bio-body">
+                        <p class="typeOf"><span>Blood Bank</span></p>
+                        <p class="city">Operating in <span>Chennai</span></p>
+                        <p class="ll-exp">Available timings: <span>9AM - 12PM</span></p>
+                    </div>
+                    <div class="contact-body">
+                        <button class="number-panel">
+                            <div><div><span class="material-symbols-outlined">call</span></div>8045978755</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="marketing-body">
             <div class="quote">
                 Passion for <span>Curing.</span>
