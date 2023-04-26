@@ -12,12 +12,14 @@
     <div class="containerr">
         <div class="logo">Lifeline.</div>
         <div class="content">
-            <div class="l1">Your Payment has been approved and the appointment is confirmed.</div>
-            <div class="l2">Thank you for choosing Lifeline as your medical partner.</div>
-            <div class="l3"> We will assure you the best service possible.</div>
+            <div class="l2">Thank you for uploading your research on Lifeline.</div>
+            <div class="l3">Knowledge shared is never going to get wasted.</div>
         </div>
         <div class="btn-home">
-            <button><a href="home-page">Back to Home</a></button>
+            <form action="/gotoprofile" method="post">
+                <input type="text" style="display:none;" value="<%= userID %>" name="docID">
+                <button type="submit" class="new-btn-hello">Back to Profile</button>
+            </form>
         </div>
     </div>
     <div class="background">

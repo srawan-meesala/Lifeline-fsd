@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Profile - Lifeline</title>
+    <title>Your Profile - Lifeline</title>
     <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png"/>
     <link rel="stylesheet" href="stylesheets/profile-doc.css" />
   </head>
@@ -45,6 +45,10 @@
                     <input type="text" style="display: none;" value="<%= details.docID %>" name="docID">
                     <button type="submit">Manage Appointments</button>
                 </form>
+                <form action="/addBlog" method="post">
+                  <input type="text" style="display: none;" value="<%= details.docID %>" name="docID">
+                  <button type="submit">Create Blog</button>
+              </form>
                 <!-- <button><a href="iframe-profile.html">Appointment History</a></button> -->
             </div>
           </div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
+    <title>Add a Blog - Lifeline</title>
+    <link rel="stylesheet" href="/stylesheets/addBlog.css">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="heading">Add a Blog - <span>Lifeline.</span></div>
+        </div>
+        <form action="/createBlog" method="post">
+            <div class="title">
+                <label for="title" class="title-lbl">Enter title of the Blog</label>
+                <input type="text" name="title" class="title-inp">
+            </div>
+            <div class="content">
+                <label for="content" class="content-lbl">Enter body of the Blog</label>
+                <textarea name="content" id="content" cols="155" rows="20"></textarea>
+            </div>
+            <div class="submit">
+                <input type="text" style="display: none;" name="docID" value="<%= userID %>">
+                <input type="text" style="display: none;" name="docname" value="<%= data[0].doctName %>">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -45,7 +45,7 @@
                         <label for="hospName" class="marital-gender-label">Choose your Hospital</label>
                         <select name="hospName" id="status-select" class="maritalStatus mari-gen-input">
                             <% details.forEach((user)=>{ %>
-                                <option value="<%= user.hospName %>"><%= user.hospName %></option>
+                                <option value="<%= user.userID %>"><%= user.hospName %></option>
                             <% }) %>
                         </select>
                     </div>

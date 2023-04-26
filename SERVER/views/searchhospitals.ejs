@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Hospitals - Lifeline.</title>
+    <title>Search Results for <%= searched_location %> - Lifeline.</title>
     <link rel="icon" type="image/x-icon" href="pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="/stylesheets/searchhospitals.css">
@@ -23,14 +23,14 @@
                         <li><a id="navListElements" class="li-ele nav-element" href="services">Services</a></li>
                         <li><a id="navListElements" class="li-ele nav-element" href="#footer-home">Contact Us</a></li>
                         <li><a id="navListElements" class="li-ele nav-element" href="aboutUs">About Us</a></li>
-                        <li><a id="navListElements" class="li-ele nav-element" href="login">Login</a></li>
+                        <li><a id="navListElements" class="li-ele nav-element" href="home">Logout</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="header-home-page">
                 <div class="input-group rounded searchbar-div">
-                    <form action="/explore2" method="get" id="searchbar-home">
-                        <input type="search" name="spec_search" class="form-control rounded searchbar" placeholder="Search for Hospitals/Doctors" aria-label="Search" aria-describedby="search-addon" />
+                    <form action="/explore" method="get" id="searchbar-home">
+                        <input type="search" name="searchBar" class="form-control rounded searchbar" placeholder="Search for Hospitals/Doctors/City/Specialization" aria-label="Search" aria-describedby="search-addon" />
                         <input type="text" name="searched_city" value="<%= searched_location %>" style="display: none;">
                         <input type="submit" class="material-symbols-outlined searchbar-search" style="position: relative;background-color: white; right: 0;" id="searchIcon" value="search">
                     </form>
@@ -40,7 +40,11 @@
         <div class="content-mid">
             <div class="content-searched">
                 <p class="searched-for">
-                    Showing Doctors in &nbsp;<span><%= searched_location %></span>
+                    <% if (searched_location == ''){ %>
+                        Showing all doctors
+                    <% }else{ %>
+                        Search results for &nbsp;'<span><%= searched_location %></span>'
+                    <% } %>
                 </p>
             </div>
         </div>
@@ -51,7 +55,7 @@
                     <div class="img-in-panel"><img src="pictures/6.png" alt="♥"></div>
                     <div class="body-panel">
                         <div class="head-body">
-                            <p class="name-dr" id="docname"><input type="text" value="<%=y.doctName %>" class="formsubmit" name="doc"><%=y.doctName %></p>
+                            <p class="name-dr" id="docname"><input type="text" value="<%= y.doctName %>" class="formsubmit" name="doc">Dr. <%=y.doctName %></p>
                             <p class="name-hosp"><input type="text" value="<%=y.hospName%>" class="formsubmit" name="hosp"><%=y.hospName%></p>
                         </div>
                         <div class="bio-body">
@@ -61,15 +65,13 @@
                         </div>
                         <input type="text" style="display: none;" name="did" value="<%= y.docID %>">
                         <input type="text" style="display: none;" name="dname" value="<%= y.doctName %>">
+                        <input type="text" style="display: none;" name="hid" value="<%= y.hospID %>">
                         <div class="contact-body">
                             <button type="button" class="number-panel">
                                 <p><span class="material-symbols-outlined">call</span><%=y.mobNum %></p>
                             </button>
                             <button type="submit" class="appoint-panel">
                                 <!-- <a href="getAppointment">Book Appointment</a>  -->Book Appointment
-                            </button>
-                            <button class="details-panel">
-                                <a href="card-open">About doctor</a>
                             </button>
                         </div>
                     </div>

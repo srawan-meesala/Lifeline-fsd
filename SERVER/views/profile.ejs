@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>profile</title>
+    <title>Your Profile - Lifeline</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
     <link rel="stylesheet" href="/stylesheets/style-profile.css">
 </head>
 <body>
@@ -42,7 +43,11 @@
                             <input type="text" name="usernameUser" value="<%= details.username %>" style="display: none;">
                             <button type="submit">Edit Profile</button>
                         </form>
-                        <button><a href="iframe-profile">Appointment History</a></button>
+                        <form action="/pathist" method="post">
+                            <input type="text" name="usernameUs" value="<%= details.username %>" style="display: none;">
+                            <button type="submit" >Appointment History</button>
+                        </form>
+                        
                     </div>
                 </div>
                 </div>

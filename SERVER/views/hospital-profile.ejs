@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Hospital profile</title>
+    <title>Hospital Profile - Lifeline.</title>
     <link rel="icon" type="image/x-icon" href="/pictures/[removal.ai]_tmp-6413f9f76b9b7.png">
     <link rel="stylesheet" href="/stylesheets/hospital-profile.css">
 </head>
@@ -41,7 +41,10 @@
                             <input type="text" name="usernameHosp" value="<%= details.userID %>" style="display: none;">
                             <button type="submit">Edit Profile</button>
                         </form>
-                        <button><a href="iframe-profile.html">Appointment History</a></button>
+                        <form action="/hospHist" method="post">
+                            <input type="text" style="display:none;" value="<%= details.userID %>" name="userIDHosp">
+                            <button type="submit" style="cursor: pointer;">Appointment History</button>
+                        </form>
                     </div>
                 </div>
             </div>
