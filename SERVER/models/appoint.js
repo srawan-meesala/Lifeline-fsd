@@ -18,6 +18,10 @@ const AppointSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    hospID:{
+        type:String,
+        required:true
+    },
     Date:{
         type:String,
         required:true
