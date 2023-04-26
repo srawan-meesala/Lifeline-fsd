@@ -65,7 +65,12 @@
 .btn-go-back:hover {
     color: #880808;
 }
-
+.new-btn-hello{
+    color: #fff;
+}
+.new-btn-hello:hover{
+    color: #880808;
+}
 /* Background styles */
 
 .background{
