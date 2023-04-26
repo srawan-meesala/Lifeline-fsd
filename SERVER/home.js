@@ -3,12 +3,15 @@ const app = express();
 const path = require('path');
 const { get } = require("http");
 const alert = require('alert');
+const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
 var collection = require('./models/register');
 var collection2 = require('./models/registerHosp');
+var Feedback = require('./models/feedback');
 var appointments = require('./models/appoint');
+var blogs = require('./models/blogs');
 const collection4 = require('./models/admin');
 const collection6 = require('./models/registerDoc');
 const { log } = require('console');
@@ -29,10 +32,29 @@ app.get('/profile', async function (req, res) {
    res.render('profile', { details: details })
 })
 
-app.get('/iframe-profile', function (req, res) {
-   res.render('iframe-profile');
+app.post('/pathist',async (req,res) => {
+   try{
+      const data = []
+      const username = req.body.usernameUs
+      console.log(username);
+      let result = (await appointments.find({username:username})).forEach((user)=>{
+         data.push(user)
+      })
+      res.render('iframe-profile',{data,username})
+   }catch(err){
+      console.log(err);
+   }
 })
 
+app.post('/prof', async (req,res)=>{
+   const username = req.body.usernameUse;
+   const result = await collection.findOne({username:username})
+   res.render('profile',{details:result})
+})
+
+app.get('/iframe-profile',(req,res)=>{
+   res.render('iframe-profile')
+})
 
 app.post('/home-page', function (req, res) {
    res.render('home-page');
@@ -124,11 +146,13 @@ app.post('/submit-login-doc', async (req, res) => {
       const approval1 = 'true';
       const approval2 = 'false';
       const check = await collection6.findOne({ docID: username })
+      if(check){
       if (check.pass === req.body.password && check.approved === approval1) {
          res.render('profile-doc', { details: check })
       }
       else if (check.pass === req.body.password && check.approved === approval2) {
-         alert('Your registration is successful Please wait for approval')
+         alert('Your registration is successful Please wait for approval');
+         res.render('login')
       }
       else if (check.pass === null) {
          alert('No such Doctor Exists')
@@ -136,6 +160,11 @@ app.post('/submit-login-doc', async (req, res) => {
       else {
          alert('Incorrect Credentials')
       }
+   }else{
+      res.render('login');
+      alert('Invalid Credentials')
+     
+   }
    }
    catch (error) {
       console.log(error.message)
@@ -247,6 +276,7 @@ app.post('/submit-login-hosp', async (req, res) => {
       const approval1 = 'true';
       const approval2 = 'false';
       const check = await collection2.findOne({ userID: username })
+      if(check){
       if (check.pass === req.body.password && check.approved === approval1) {
          res.render('hospital-profile', { details: check })
       }
@@ -259,6 +289,10 @@ app.post('/submit-login-hosp', async (req, res) => {
       else {
          alert('Incorrect Credentials')
       }
+   }
+   else {
+      alert('Incorrect Credentials')
+   }
    }
    catch (error) {
       console.log(error.message)
@@ -308,19 +342,19 @@ app.post('/applydoc', async (req, res) => {
    try {
       const username = req.body.username;
       const docData = await collection6.findOne({ docID: username });
-      const city = await collection2.findOne({ hospName: req.body.hospName })
+      const city = await collection2.findOne({ userID: req.body.hospName })
 
       if (docData) {
          alert('User already exists');
       }
       else {
          const docdata = new collection6({
-            doctName: req.body.doctName,
+            doctName: req.body.doctName.toLowerCase(),
             mobNum: req.body.mobNum,
             emailID: req.body.emailID,
-            hospName: req.body.hospName,
+            hospName: city.hospName.toLowerCase(),
             city: city.city.toLowerCase(),
-            hospID: city.userID,
+            hospID: req.body.hospName,
             spec: req.body.spec.toLowerCase(),
             price: req.body.price,
             docID: req.body.docID,
@@ -332,12 +366,9 @@ app.post('/applydoc', async (req, res) => {
 
          if (docdata) {
             res.render('docRegister2');
-         }
-
-         else {
+         } else {
             alert('Your Registration has been failed.');
          }
-
       }
    }
    catch (error) {
@@ -492,12 +523,17 @@ app.post('/submit-login-admin', async function (req, res) {
    try {
       const username = req.body.username;
       const check = await collection4.findOne({ username: username })
+      if(check){
       if (check.password === req.body.password) {
          res.render('admin')
       }
       else {
          res.render('login', alert('Username/password incorrect'));
       }
+   }else{
+      alert('Invalid Credentialds');
+      res.render('login')
+   }
    }
    catch (error) {
       console.log(error.message)
@@ -535,6 +571,63 @@ app.get('/bloodbanks', async (req, res) => {
    res.render('bloodbanks', { data });
 })
 
+app.post('/addBlog',async(req,res)=>{
+   let userID = req.body.docID
+   try{
+      let data = []
+      let result = (await collection6.find({docID:userID})).forEach((user)=>{
+         data.push(user)
+      })
+      res.render('addBlog',{data, userID})
+   }catch(err){
+      console.log(err);
+   }
+})
+
+app.post('/createBlog',async(req,res)=>{
+   let userID = req.body.docID
+   let docname = req.body.docname
+   let title = req.body.title
+   let content = req.body.content
+   try{
+      const blog = new blogs({
+         doctname: docname,
+         docID: userID,
+         title: title,
+         content: content
+      });
+      const result = await blog.save();
+      if(blog){
+         res.render('blog-ty',{userID})
+      }
+   }catch(err){
+      console.log(err);
+   }
+})
+
+app.post('/gotoprofile',async(req,res)=>{
+   let docID = req.body.docID
+   console.log(docID);
+   try{
+      let check = await collection6.findOne({docID:docID})
+      res.render('profile-doc',{details:check})
+   }catch(err){
+      console.log(err);
+   }
+})
+
+//Get all blogs
+app.post('/openBlog',async(req,res)=>{
+   try{
+      let blogger = []
+      let result = (await blogs.find({})).forEach((blog)=>{
+         blogger.push(blog)
+      })
+      res.render('blogs',{blogger})
+   }catch(err){
+      console.log(err);
+   }
+})
 
 app.get('/diagnosis', async (req, res) => {
    let data = []
@@ -567,6 +660,18 @@ app.post('/proceed', async (req, res) => {
    res.render('register2')
 });
 
+const securePassword = async(password)=>{
+    
+   try{
+       const passwordHash = await bcrypt.hash(password,10);
+       return passwordHash;
+   }
+   catch(error){
+      console.log(error.message);
+   }
+}
+
+
 app.post('/submit', async (req, res) => {
    try {
       const username = req.body.username;
@@ -577,6 +682,7 @@ app.post('/submit', async (req, res) => {
          alert('User already exists');
       }
       else {
+         const spassword = await securePassword(req.body.password);
          const userdata = new collection({
             firstName: arr[0],
             lastName: arr[1],
@@ -588,7 +694,7 @@ app.post('/submit', async (req, res) => {
             maritalStatus: arr[7],
             gender: arr[8],
             username: req.body.username,
-            password: req.body.password,
+            password: spassword,
          });
 
          const result = await userdata.save();
@@ -608,18 +714,27 @@ app.post('/submit', async (req, res) => {
    }
 })
 
-app.post('/submit-login', async (req, res) => {
 
+//Login
+app.post('/submit-login', async (req, res) => {
    try {
       const username = req.body.username;
+      const password = req.body.password;
       UN = username;
       const check = await collection.findOne({ username: username })
-      if (check.password === req.body.password) {
+      const passwordMatch = await bcrypt.compare(password,check.password);
+      if(check){
+      if (passwordMatch) {
          res.redirect('home-page')
       }
       else {
-         res.render('login', alert('Username/password incorrect'));
+         res.render('login');
+         alert('Username/password incorrect')
       }
+   }else{
+      res.render('login');
+      alert('Invalid Credentials')
+   }
    }
    catch (error) {
       console.log(error.message)
@@ -627,6 +742,7 @@ app.post('/submit-login', async (req, res) => {
 
 });
 
+//
 app.post('/apply', async (req, res) => {
    try {
       const userID = req.body.userID;
@@ -667,12 +783,10 @@ app.post('/apply', async (req, res) => {
    }
 })
 
+
+// search page rendering
 app.get('/search', (req, res) => {
    res.render('search')
-})
-
-app.post('/explore', (req, res) => {
-   res.render('searchhospitals')
 })
 
 app.post('/editHosp', async (req, res) => {
@@ -707,21 +821,61 @@ app.post('/editHosp', async (req, res) => {
    }
 })
 
-app.get('/explore', async (req, res) => {
-   let searched_location = req.query.searchBar.toLowerCase()
-   await collection6.find({ city: searched_location })
-      .then((x) => {
-         console.log("search results successfully found")
-         res.render('searchhospitals', { x , searched_location})
+// Shows Hospital's Appointment History
+app.post('/hospHist',async (req,res) => {
+   try{
+      let data = []
+      usernameH = req.body.userIDHosp
+      console.log(usernameH);
+      let result = (await appointments.find({hospID:usernameH})).forEach((user)=>{
+         data.push(user)
       })
-      .catch((y) => {
-         console.log("search results not found ....")
-      })
+      res.render('iframe-hospital-profile',{data})
+   }catch(err){
+      console.log(err);
+   }
 })
 
+//search to showing doctors based on searched
+app.get('/explore', async (req, res) => {
+   let searched_location = req.query.searchBar.toLowerCase()
+   let data = []
+   if(searched_location ===''){
+      await collection6.find({})
+         .then((x) => {
+            console.log("search results successfully found")
+            res.render('searchhospitals', { x , searched_location})
+         })
+         .catch((y) => {
+            console.log("search results not found ....")
+         })
+   }else{
+      await collection6.find({$or: [
+         {city:searched_location},{spec:searched_location},
+         {doctName:searched_location},{hospName:searched_location}
+      ]})
+         .then((x) => {
+            console.log("search results successfully found")
+            res.render('searchhospitals', { x , searched_location})
+         })
+         .catch((y) => {
+            console.log("search results not found ....")
+         })
+   }
+   
+})
 
-app.get('/manageAppoint', async (req, res) => {
-
+app.post('/bookApp', async(req,res)=>{
+   const docID = req.body.docID
+   let result = await collection6.findOne({docID:docID})
+   const docName = result.doctName
+   const hospName = result.hospName
+   const price = result.price
+   const hID = req.body.hID
+   const charge = parseInt(parseInt(price) * 0.1);
+   const final = parseInt(parseInt(price) + charge)
+   const hjk = [docName, hospName, price,charge, final, docID, hID]
+   res.render('getAppointment', { hjk })
 })
 
 app.post('/get', (req, res) => {
@@ -729,12 +883,15 @@ app.post('/get', (req, res) => {
    const hospName = req.body.hosp;
    const price = req.body.price;
    const Did = req.body.did;
+   const hID = req.body.hid;
+   console.log(hID)
    const charge = parseInt(parseInt(price) * 0.1);
    const final = parseInt(parseInt(price) + charge)
-   const hjk = [docName, hospName, price, charge, final, Did]
+   const hjk = [docName, hospName, price, charge, final, Did, hID]
    res.render('getAppointment', { hjk })
 })
 
+//Confirm an Appointment
 app.post('/ty', async function (req, res) {
    try {
       const Appoint = new appointments({
@@ -743,31 +900,70 @@ app.post('/ty', async function (req, res) {
          Timeslot: req.body.timeAppoint,
          Contact: req.body.contactAppoint,
          docID: req.body.Did,
+         hospID:req.body.hid,
          docName: req.body.dname,
          username: UN,
          approved: false,
          finished: false,
-
       });
 
       const result = await Appoint.save();
 
       if (Appoint) {
          res.render('ty');
-      }
-
-      else {
+      }else {
          alert('Your appointment has been failed');
       }
-   }
-
-   catch (error) {
+   }catch (error) {
       res.send(error.message);
    }
 
 })
 
+//Adding feedback into collection
 
+app.post('/addquery', async(req,res)=>{
+   const email = req.body.mailFooter;
+   const result = await collection.findOne({mailID:email});
+   if(result){
+      try{
+          const data =new Feedback({
+            name:result.firstName,
+            mobnum:result.mobileNumber,
+            email:result.mailID,
+            username:result.username,
+            query:req.body.queryFooter
+          })
+          const result1 = await data.save()
+          if(result1){
+            console.log('FeedBack Sent');
+            res.render('home-page')
+          }
+          else{
+            alert('Error sending Feedback');
+            res.render('home-page')
+          }
+      }catch(err){
+         console.log(err.message);
+      }
+   }
+   else{
+      alert('No user exists with such mail id');
+      res.redirect('home-page')
+   }
+})
+
+// viewing feedbacks in admin portal
+
+app.get('/formAdmin-feedback', async (req, res) => {
+   const details = [];
+   const docData = (await Feedback.find().sort({ id: -1 })).forEach((user) => {
+      details.push(user);
+   });
+   res.render('formAdmin-feedback', { details: details });
+})
+
+//Connection through a port number
 app.listen(9000, function (req, res) {
    console.log('server started')
 });
